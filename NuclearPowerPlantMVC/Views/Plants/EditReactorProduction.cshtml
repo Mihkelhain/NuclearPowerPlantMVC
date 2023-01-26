@@ -1,0 +1,29 @@
+﻿@model Reactor
+
+@{
+    ViewData["Title"] = "Edit Reactor Production";
+}
+
+
+<div class="container mt-5 w-50 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="text-center">Edit Reactor @Model.Id's Energy Production</h3>
+        </div>
+        <div class="card-body">
+            <form method="post" asp-action="EditReactorProduction">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="@Model.Id" />
+                <div class="form-group">
+                    <label asp-for="EnergyProduction"></label>
+                    <input asp-for="EnergyProduction" class="form-control" />
+                    <span asp-validation-for="EnergyProduction" class="text-danger"></span>
+                </div>
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

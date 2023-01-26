@@ -1,0 +1,59 @@
+﻿@using System.Text.RegularExpressions;
+@model IEnumerable<NuclearPlant>
+
+@{
+	ViewData["Title"] = "Control Panel";
+}
+
+<h1 class="mx-1">Control Panel</h1>
+<p class="text-muted mx-1">Here you can control the nuclear plants.</p>
+
+<br />
+<div class="card-columns">
+	@foreach (var plant in Model)
+	{
+		<div class="card bg-light w-75">
+			<div class="card-body">
+				<div class="d-flex justify-content-between align-items-start">
+					<h2 class="card-title mx-auto" style="transform: translate(42px, 0)">Plant @plant.Name</h2>
+					<a asp-action="Control" asp-route-id="@plant.Id" class="btn btn-success mx-1">Control</a>
+				</div>
+				<hr />
+				<h6 class="card-subtitle mb-2 text-center">Plant @plant.Name's Information</h6>
+				<table class="table w-50 mx-auto">
+					<tbody>
+						<tr>
+							<th style="width: 40%;">@Html.DisplayNameFor(x => x.Id)</th>
+							<td>@plant.Id</td>
+						</tr>
+						<tr>
+							<th>@Html.DisplayNameFor(x => x.EnergyDemand)</th>
+							<td>@plant.EnergyDemand</td>
+						</tr>
+						<tr>
+							<th>Status</th>
+							<td>
+								@if (plant.Status != "Off")
+								{
+									@if (plant.Status == "Normal")
+									{
+										<b class="text-success">Normal</b>
+									}
+									else
+									{
+										<b class="text-danger">Overheated</b>
+									}
+								}
+								else
+								{
+									<b class="text-muted">Off</b>
+								}
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<hr />
+			</div>
+		</div>
+	}
+</div>

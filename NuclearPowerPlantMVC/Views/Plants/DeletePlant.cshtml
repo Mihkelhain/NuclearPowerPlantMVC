@@ -1,0 +1,118 @@
+﻿@using System.Text.RegularExpressions;
+@using Humanizer;
+@model NuclearPlant
+
+@{
+	ViewData["Title"] = "Delete Plant";
+}
+
+
+@{ double difference = Model.Reactors.Where(x => x.IsOn).Sum(x => x.EnergyProduction) - Model.EnergyDemand; }
+
+<div class="w-75 mx-auto">
+	<h2>Are you sure you want to delete this nuclear plant?</h2>
+	<div class="card bg-light">
+		<div class="card-body">
+			<div class="d-flex justify-content-between align-items-center">
+				<h2 class="card-title mx-auto">Plant @Model.Name</h2>
+			</div>
+			<hr />
+			<h6 class="card-subtitle mb-2 text-center">Plant @Model.Name's Information</h6>
+			<table class="table w-50 mx-auto">
+				<tbody>
+					<tr>
+						<th style="width: 40%;">@Html.DisplayNameFor(x => x.Id)</th>
+						<td>@Model.Id</td>
+					</tr>
+					<tr>
+						<th>@Html.DisplayNameFor(x => x.EnergyDemand)</th>
+						<td>@Model.EnergyDemand</td>
+					</tr>
+					<tr>
+						<th>Status</th>
+						<td>
+							@if (difference >= 0)
+							{
+								<b class="text-success">Normal</b>
+							}
+							else
+							{
+								<b class="text-danger">Overheated</b>
+							}
+						</td>
+					</tr>
+					<tr>
+						<th>Uptime</th>
+						@if (Model.Reactors.Count > 0 && Model.Reactors.Find(x => x.IsOn) != null)
+						{
+							<td>
+								@DateTime.Now.Subtract(Model.LastTurnedOn).Humanize(3, countEmptyUnits: true)
+							</td>
+						}
+						else
+						{
+							<td>Off</td>
+						}
+					</tr>
+				</tbody>
+			</table>
+			<h5 class="text-center">
+				Difference in Production and Demand
+				<br>
+				@if (difference >= 0)
+				{
+					<b class="text-success">+@difference</b>
+				}
+				else
+				{
+					<b class="text-danger">@difference (Overdemanding)</b>
+				}
+			</h5>
+			<hr />
+			@if (Model.Reactors.Count > 0)
+			{
+				<div class="d-flex justify-content-center">
+					<h3 class="card-subtitle text-center d-inline mx-5">@Model.Name's Reactors</h3>
+				</div>
+				@foreach (var reactor in Model.Reactors)
+				{
+					<div class="card bg-light w-50 mx-auto my-3">
+						<div class="card-body">
+							<div class="d-flex flex-row-reverse">
+								<h4 style="margin-right: auto;" class="px-2">Reactor @reactor.Id</h4>
+							</div>
+							<table class="table">
+								<tbody>
+									<tr>
+										<th style="width: 30%;">@Html.DisplayNameFor(x => x.Reactors[0].EnergyProduction)</th>
+										<td>@reactor.EnergyProduction</td>
+									</tr>
+									<tr>
+										<th>@Html.DisplayNameFor(x => x.Reactors[0].IsOn)</th>
+										@if (reactor.IsOn)
+										{
+											<td class="text-success"><b>On</b></td>
+										}
+										else
+										{
+											<td class="text-danger"><b>Off</b></td>
+										}
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				}
+			}
+			else
+			{
+				<p class="text-muted mx-1 text-center">This plant has no reactors.</p>
+			}
+		</div>
+	</div>
+	<form method="post" asp-action="DeletePlantConfirmed" class="mt-3">
+		<input type="hidden" asp-for="@Model.Id" />
+		<button type="submit" class="btn btn-danger">Delete</button>
+	</form>
+	<a asp-action="Index" class="btn btn-secondary mt-3">Cancel</a>
+</div>

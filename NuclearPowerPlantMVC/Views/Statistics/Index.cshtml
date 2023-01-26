@@ -1,0 +1,40 @@
+﻿@using System.Text.RegularExpressions;
+@using Humanizer;
+@model StatisticsViewModel
+
+@{
+	ViewData["Title"] = "Statistics";
+}
+
+<div class="w-50 mx-auto">
+	<h1 class="text-center">Statistics</h1>
+	<div class="mt-3 text-center">
+		<h3>Currently running plants have consumed</h3>
+		<h5><b>@Model.CurrentWaterConsumption</b> m3 of water</h5>
+	</div>
+	<div class="mt-3 text-center">
+		<h3>Currently running plants total uptime</h3>
+		<h5>
+			<b>
+				@Model.TotalUptimeSum.Humanize(10, countEmptyUnits: true)
+			</b>
+		</h5>
+	</div>
+	<div class="mt-5">
+		<table class="table">
+			<tbody>
+				<tr>
+					<th>Plant Name</th>
+					<th>Status</th>
+				</tr>
+				@foreach (var plant in Model.Workorder)
+				{
+					<tr>
+						<td>@plant.Name</td>
+						<td>@plant.Status</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,101 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = NuclearPowerPlantMVC
+build_property.RootNamespace = NuclearPowerPlantMVC
+build_property.ProjectDir = C:\Users\Hyo\Desktop\Kool\NuclearPowerPlantMVC\NuclearPowerPlantMVC\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Hyo\Desktop\Kool\NuclearPowerPlantMVC\NuclearPowerPlantMVC
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Hyo/Desktop/Kool/NuclearPowerPlantMVC/NuclearPowerPlantMVC/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hyo/Desktop/Kool/NuclearPowerPlantMVC/NuclearPowerPlantMVC/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hyo/Desktop/Kool/NuclearPowerPlantMVC/NuclearPowerPlantMVC/Views/ControlPanel/ChangeDemand.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udHJvbFBhbmVsXENoYW5nZURlbWFuZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hyo/Desktop/Kool/NuclearPowerPlantMVC/NuclearPowerPlantMVC/Views/ControlPanel/Control.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udHJvbFBhbmVsXENvbnRyb2wuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hyo/Desktop/Kool/NuclearPowerPlantMVC/NuclearPowerPlantMVC/Views/ControlPanel/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udHJvbFBhbmVsXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hyo/Desktop/Kool/NuclearPowerPlantMVC/NuclearPowerPlantMVC/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hyo/Desktop/Kool/NuclearPowerPlantMVC/NuclearPowerPlantMVC/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hyo/Desktop/Kool/NuclearPowerPlantMVC/NuclearPowerPlantMVC/Views/Plants/AddPlant.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhbnRzXEFkZFBsYW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hyo/Desktop/Kool/NuclearPowerPlantMVC/NuclearPowerPlantMVC/Views/Plants/AddReactor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhbnRzXEFkZFJlYWN0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hyo/Desktop/Kool/NuclearPowerPlantMVC/NuclearPowerPlantMVC/Views/Plants/DeletePlant.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhbnRzXERlbGV0ZVBsYW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hyo/Desktop/Kool/NuclearPowerPlantMVC/NuclearPowerPlantMVC/Views/Plants/DeleteReactor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhbnRzXERlbGV0ZVJlYWN0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hyo/Desktop/Kool/NuclearPowerPlantMVC/NuclearPowerPlantMVC/Views/Plants/EditPlantName.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhbnRzXEVkaXRQbGFudE5hbWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hyo/Desktop/Kool/NuclearPowerPlantMVC/NuclearPowerPlantMVC/Views/Plants/EditReactorProduction.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhbnRzXEVkaXRSZWFjdG9yUHJvZHVjdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hyo/Desktop/Kool/NuclearPowerPlantMVC/NuclearPowerPlantMVC/Views/Plants/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhbnRzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hyo/Desktop/Kool/NuclearPowerPlantMVC/NuclearPowerPlantMVC/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hyo/Desktop/Kool/NuclearPowerPlantMVC/NuclearPowerPlantMVC/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hyo/Desktop/Kool/NuclearPowerPlantMVC/NuclearPowerPlantMVC/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hyo/Desktop/Kool/NuclearPowerPlantMVC/NuclearPowerPlantMVC/Views/Statistics/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdGlzdGljc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hyo/Desktop/Kool/NuclearPowerPlantMVC/NuclearPowerPlantMVC/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hyo/Desktop/Kool/NuclearPowerPlantMVC/NuclearPowerPlantMVC/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hyo/Desktop/Kool/NuclearPowerPlantMVC/NuclearPowerPlantMVC/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-e0elozl87s

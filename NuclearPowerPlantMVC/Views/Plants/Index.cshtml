@@ -1,0 +1,127 @@
+﻿@using System.Text.RegularExpressions;
+@using Humanizer;
+@model IEnumerable<NuclearPowerPlantMVC.Models.NuclearPlant>
+
+@{
+	ViewData["Title"] = "Nuclear Plants";
+}
+
+<h1 class="mx-1">Nuclear Plants</h1>
+<p class="text-muted mx-1">Shows all current nuclear plants in the database.</p>
+
+<a asp-action="AddPlant" class="btn btn-primary mb-3 mx-1">Add Nuclear Plant</a>
+<br />
+<div class="card-columns">
+	@foreach (var plant in Model)
+	{
+		double difference = plant.Reactors.Where(x => x.IsOn).Sum(x => x.EnergyProduction) - plant.EnergyDemand;
+
+		<div class="card bg-light">
+			<div class="card-body">
+				<div class="d-flex justify-content-between align-items-center">
+					<h2 class="card-title mx-auto" style="transform: translate(137px, 0)">Plant @plant.Name</h2>
+					<a asp-action="Control" asp-controller="ControlPanel" asp-route-id="@plant.Id" class="btn btn-success mx-1">Control</a>
+					<a asp-action="EditPlantName" asp-route-id="@plant.Id" class="btn btn-secondary mx-1">Edit Name</a>
+					<a asp-action="DeletePlant" asp-route-id="@plant.Id" class="btn btn-danger">Delete</a>
+				</div>
+				<hr/>
+				<h6 class="card-subtitle mb-2 text-center">Plant @plant.Name's Information</h6>
+				<table class="table w-50 mx-auto">
+					<tbody>
+						<tr>
+							<th style="width: 40%;">@Html.DisplayNameFor(x => x.Id)</th>
+							<td>@plant.Id</td>
+						</tr>
+						<tr>
+							<th>@Html.DisplayNameFor(x => x.EnergyDemand)</th>
+							<td>@plant.EnergyDemand</td>
+						</tr>
+						<tr>
+							<th>Status</th>
+							<td>
+								@if (plant.Status != "Off")
+								{
+									@if (plant.Status == "Normal")
+									{
+										<b class="text-success">Normal</b>
+									}
+									else
+									{
+										<b class="text-danger">Overheated</b>
+									}
+								}
+								else
+								{
+									<b class="text-muted">Off</b>
+								}
+							</td>
+						</tr>
+						<tr>
+							<th>Uptime</th>
+							@if (plant.Reactors.Count > 0 && plant.Reactors.Find(x => x.IsOn) != null)
+							{
+								<td>
+									@DateTime.Now.Subtract(plant.LastTurnedOn).Humanize(3, countEmptyUnits: true)
+								</td>
+							}
+							else
+							{
+								<td>Off</td>
+							}
+						</tr>
+					</tbody>
+				</table>
+				<h5 class="text-center">Difference in Production and Demand
+					<br>
+					@if (difference >= 0)
+					{
+						<b class="text-success">+@difference</b>
+					}
+					else
+					{
+						<b class="text-danger">@Math.Abs(difference) (Overdemanding)</b>
+					}
+				</h5>
+				<hr />
+				@if (plant.Reactors.Count > 0)
+				{
+					<div class="d-flex justify-content-center">
+						<h3 class="card-subtitle text-center d-inline mx-5">@plant.Name's Reactors</h3>
+						<a asp-action="AddReactor" class="btn btn-primary" asp-route-id="@plant.Id">Add a new Reactor</a>
+					</div>
+					@foreach (var reactor in plant.Reactors)
+					{
+						<div class="card bg-light w-50 mx-auto my-3">
+							<div class="card-body">
+								<div class="d-flex flex-row-reverse">
+									<a asp-action="DeleteReactor" asp-route-id="@reactor.Id" class="btn btn-danger mx-1">Delete</a>
+									<a asp-action="EditReactorProduction" asp-route-id="@reactor.Id" class="btn btn-secondary mx-1">Edit Production</a>
+									<h4 style="margin-right: auto;" class="px-2">Reactor @reactor.Id</h4>
+								</div>
+								<table class="table">
+									<tbody>
+										<tr>
+											<th style="width: 30%;">@Html.DisplayNameFor(x => x.Reactors[0].EnergyProduction)</th>
+											<td>@reactor.EnergyProduction</td>
+										</tr>
+										<tr>
+											<th>@Html.DisplayNameFor(x => x.Reactors[0].IsOn)</th>
+											@if (reactor.IsOn) { <td class="text-success"><b>On</b></td> }
+											else { <td class="text-danger"><b>Off</b></td> }
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					}
+				}
+				else
+				{
+					<p class="text-muted mx-1 text-center">This plant has no reactors added yet. Press 'Add a new Reactor' below to add a reactor.</p>
+					<a asp-action="AddReactor" class="btn btn-primary mx-auto w-25 d-block mt-2" asp-route-id="@plant.Id">Add a new Reactor</a>
+				}
+			</div>
+		</div>
+		<hr />
+	}
+</div>
